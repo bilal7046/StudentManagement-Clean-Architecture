@@ -1,0 +1,43 @@
+﻿@page
+@model StudentManagement.Pages.Student.CreateModel
+@{
+}
+<div class="container my-4">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Student Information</h4>
+        </div>
+        <div class="card-body">
+            <form method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" asp-for="StudentRequest.Name" placeholder="Enter your name" />
+                    <span asp-validation-for="StudentRequest.Name" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" asp-for="StudentRequest.Email" placeholder="Enter your email" />
+                    <span asp-validation-for="StudentRequest.Email" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label for="address" class="form-label">Address</label>
+                    <input type="text" class="form-control" id="address" asp-for="StudentRequest.Address" placeholder="Enter your address" />
+                    <span asp-validation-for="StudentRequest.Address" class="text-danger"></span>
+                </div>
+
+                <div class="text-end">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i> Save
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

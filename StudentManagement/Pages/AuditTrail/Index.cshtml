@@ -1,0 +1,44 @@
+﻿@page
+@model StudentManagement.Pages.AuditTrail.IndexModel
+@{
+}
+
+<div class="mb-3">
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Timestamp</th>
+                <th>Action</th>
+                <th>Entity Name</th>
+                <th>Old Data</th>
+                <th>New Data</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.AuditTrails.Any())
+            {
+                @foreach (var record in Model.AuditTrails)
+                {
+                    <tr>
+                        <td>@record.Timestamp.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                        <td>@record.Action</td>
+                        <td>@record.TableName</td>
+
+                        <td>
+                            @record.OldData
+                        </td>
+                        <td>
+                            @record.NewData
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="5" class="text-center">No audit trail records found.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

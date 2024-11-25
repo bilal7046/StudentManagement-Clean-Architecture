@@ -1,0 +1,20 @@
+﻿@page
+@model StudentManagement.Pages.Student.DetailModel
+@{
+}
+<div class="container my-4">
+    <h2>Student Details</h2>
+    <dl class="row">
+        <dt class="col-sm-3">Name</dt>
+        <dd class="col-sm-9">@Model.Student.Name</dd>
+
+        <dt class="col-sm-3">Email</dt>
+        <dd class="col-sm-9">@Model.Student.Email</dd>
+
+        <dt class="col-sm-3">Address</dt>
+        <dd class="col-sm-9">@Model.Student.Address</dd>
+    </dl>
+    <a asp-page="./Index" class="btn btn-secondary">
+        <i class="fas fa-arrow-left"></i> Back to List
+    </a>
+</div>
